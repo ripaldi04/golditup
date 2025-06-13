@@ -3,11 +3,11 @@
         <div class="flex justify-between items-center h-16">
             <!-- Kiri -->
             <div class="flex items-center space-x-6">
-                <a href="" class="text-sm font-medium text-gray-600 hover:text-gray-900" wire:navigate>
+                <a href="/" class="text-sm font-medium text-gray-600 hover:text-gray-900" wire:navigate>
                     Beranda
                 </a>
-                <a href="" class="text-sm font-medium text-gray-600 hover:text-gray-900" wire:navigate>
-                    About Us
+                <a href="/aboutus" class="text-sm font-medium text-gray-600 hover:text-gray-900" wire:navigate>
+                    Tentang Kami
                 </a>
             </div>
 
@@ -20,10 +20,10 @@
 
             <!-- Kanan -->
             <div class="flex items-center space-x-6">
-                <a href="" class="text-sm font-medium text-gray-600 hover:text-gray-900" wire:navigate>
-                    Event
+                <a href="/event" class="text-sm font-medium text-gray-600 hover:text-gray-900" wire:navigate>
+                    Acara
                 </a>
-                <a href="" class="text-sm font-medium text-gray-600 hover:text-gray-900" wire:navigate>
+                <a href="/product" class="text-sm font-medium text-gray-600 hover:text-gray-900" wire:navigate>
                     Produk
                 </a>
 

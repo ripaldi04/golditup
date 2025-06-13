@@ -109,60 +109,56 @@
             </div>
     </section>
     <section>
-        <div class="mt-10">
+        <div class="mt-10 max-w-7xl mx-auto px-4">
             <h2 class="font-bold text-center text-[36px] leading-[52px]">JOIN MEMBERSHIP</h2>
-            <p class="text-center p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui labore ducimus in
-                hic, porro est ex, fugiat
+            <p class="text-center p-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui labore ducimus in hic, porro est ex, fugiat
                 esse illo iste expedita quaerat distinctio illum officia totam aspernatur perferendis voluptas
-                minus.Doloremque nihil perspiciatis eum soluta sapiente distinctio tempora quas placeat quidem qui modi
+                minus. Doloremque nihil perspiciatis eum soluta sapiente distinctio tempora quas placeat quidem qui modi
                 iure molestias, rem cum in molestiae asperiores explicabo aut eius fuga. Maiores velit iusto rerum
-                incidunt praesentium.</p>
+                incidunt praesentium.
+            </p>
 
-        </div>
-        <!-- 2Kotak Berjejer -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 px-10 mt-10">
-            <!-- Kotak 1 -->
-            <div class="relative flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-                <div
-                    class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+            <!-- Grid Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+                <!-- Card 1 -->
+                <div class="relative flex flex-col rounded-xl bg-white text-gray-700 shadow-md w-full">
+                    <div class="h-40 rounded-t-xl bg-gradient-to-r from-[#FEBA17] to-[#e69c0f] shadow-lg">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h5 class="mb-2 text-xl font-semibold text-blue-gray-900">
+                            Tailwind card
+                        </h5>
+                        <p class="text-base font-light leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0 text-center">
+                        <button type="button"
+                            class="rounded-lg bg-[#FEBA17] py-3 px-6 text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg focus:opacity-85">
+                            Read More
+                        </button>
+                    </div>
                 </div>
-                <div class="p-6 text-center">
-                    <h5
-                        class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                        Tailwind card
-                    </h5>
-                    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula.
-                    </p>
-                </div>
-                <div class="p-6 pt-0 text-center">
-                    <button data-ripple-light="true" type="button"
-                        class="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                        Read More
-                    </button>
-                </div>
-            </div>
 
-            <!-- Kotak 2 -->
-            <div
-                class="relative flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md mt-8 sm:mt-0">
-                <div
-                    class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
-                </div>
-                <div class="p-6 text-center">
-                    <h5
-                        class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                        Tailwind card
-                    </h5>
-                    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula.
-                    </p>
-                </div>
-                <div class="p-6 pt-0 text-center">
-                    <button data-ripple-light="true" type="button"
-                        class="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                        Read More
-                    </button>
+                <!-- Card 2 -->
+                <div class="relative flex flex-col rounded-xl bg-white text-gray-700 shadow-md w-full">
+                    <div class="h-40 rounded-t-xl bg-gradient-to-r from-[#FEBA17] to-[#e69c0f] shadow-lg">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h5 class="mb-2 text-xl font-semibold text-blue-gray-900">
+                            Tailwind card
+                        </h5>
+                        <p class="text-base font-light leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0 text-center">
+                        <button type="button"
+                            class="rounded-lg bg-[#FEBA17] py-3 px-6 text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg focus:opacity-85">
+                            Read More
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -17,9 +17,9 @@
                                 ksdf </p>
                         </div>
                         <div class="flex gap-6 w-fit pb-10">
-                            <a href="/materi"
-                                class="text-white bg-[#FEBA17] font-semibold rounded-[30px] p-[16px_32px] transition-all duration-300 hover:bg-[#FEBA17] animate__animated animate__fadeInUpBig">Mulai
-                                Sekarang</a>
+                            <a href="/aboutus"
+                                class="text-white bg-[#FEBA17] font-semibold rounded-[30px] p-[16px_32px] transition-all duration-300 hover:bg-[#FEBA17] animate__animated animate__fadeInUpBig">Pelajari
+                                Lebih Lanjut</a>
                         </div>
                     </div>
                 </div>
@@ -66,8 +66,8 @@
                 <h2 class="font-bold text-[36px] leading-[52px]">Belajar Dimana Saja,<br>Kapanpun Anda Mau</h2>
                 <p class="max-w-xl text-[#475466] text-lg leading-[34px]">oioioi</p>
                 <a href=""
-                    class="text-white font-semibold mx-auto md:mx-0 rounded-[30px] p-[16px_32px] bg-[#FEBA17] transition-all duration-300 hover:shadow-[0_10px_20px_0_#F0654280] w-fit">Cek
-                    Harga</a>
+                    class="text-white font-semibold mx-auto md:mx-0 rounded-[30px] p-[16px_32px] bg-[#FEBA17] transition-all duration-300 hover:shadow-[0_10px_20px_0_#F0654280] w-fit">Lihat
+                    Preview</a>
             </div>
         </div>
     </section>
@@ -134,10 +134,10 @@
                         </p>
                     </div>
                     <div class="p-6 pt-0 text-center">
-                        <button type="button"
-                            class="rounded-lg bg-[#FEBA17] py-3 px-6 text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg focus:opacity-85">
-                            Read More
-                        </button>
+                        <a href="/class/detail"
+                            class="inline-block rounded-lg bg-[#FEBA17] py-3 px-6 text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg focus:opacity-85">
+                            Lihat Selengkapnya
+                        </a>
                     </div>
                 </div>
 
@@ -154,10 +154,10 @@
                         </p>
                     </div>
                     <div class="p-6 pt-0 text-center">
-                        <button type="button"
-                            class="rounded-lg bg-[#FEBA17] py-3 px-6 text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg focus:opacity-85">
-                            Read More
-                        </button>
+                        <a href="/class/detail"
+                            class="inline-block rounded-lg bg-[#FEBA17] py-3 px-6 text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg focus:opacity-85">
+                            Lihat Selengkapnya
+                        </a>
                     </div>
                 </div>
             </div>

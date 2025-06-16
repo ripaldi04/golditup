@@ -11,7 +11,16 @@ Alpine.start();
 
 window.initSwipers = function () {
     document.querySelectorAll('.kelasSwiper, .kelasTerbaruSwiper').forEach(function (el) {
-        if (el.swiper) return;
+        const slides = el.querySelectorAll('.swiper-slide');
+        if (!slides.length) {
+            console.warn('Lewati init swiper: tidak ada slide ditemukan di', el);
+            return;
+        }
+
+        // Destroy swiper lama jika sudah ada
+        if (el.swiper) {
+            el.swiper.destroy(true, true);
+        }
 
         const isTerbaru = el.classList.contains('kelasTerbaruSwiper');
 
@@ -24,24 +33,30 @@ window.initSwipers = function () {
             },
             breakpoints: {
                 768: {
-                    slidesPerView: isTerbaru ? 2 : 2,
+                    slidesPerView: 2
                 },
                 1024: {
-                    slidesPerView: isTerbaru ? 2 : 3,
+                    slidesPerView: isTerbaru ? 2 : 3
                 }
             }
         });
 
-        setTimeout(() => swiper.update(), 100);
+        requestAnimationFrame(() => {
+            swiper.slideTo(0, 0);
+            swiper.update();
+            console.log('Swiper init & update:', el);
+        });
     });
 };
 
+// Jalankan saat pertama kali halaman dimuat
 document.addEventListener("DOMContentLoaded", () => {
     window.initSwipers();
 });
 
-if (window.livewire) {
-    window.livewire.hook('message.processed', () => {
+// DARI LIVEWIRE EVENT MANUAL
+window.addEventListener('initSwipersManually', () => {
+    setTimeout(() => {
         window.initSwipers();
-    });
-}
+    }, 100);
+});

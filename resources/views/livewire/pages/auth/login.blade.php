@@ -20,7 +20,11 @@ new #[Layout('layouts.guest')] class extends Component
 
         Session::regenerate();
 
-        redirect()->intended(auth()->user()?->is_admin ? '/admin/dashboard' : '/');
+        // redirect()->intended(auth()->user()?->is_admin ? '/admin/dashboard' : '/');
+        $this->dispatch('login-successful', [
+    'url' => auth()->user()?->is_admin ? '/admin/dashboard' : '/',
+]);
+
     }
 }; ?>
 

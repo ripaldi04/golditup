@@ -1,80 +1,66 @@
 <x-applayout>
     <div class="text-center py-12 px-4">
-        <h1 class="text-4xl font-bold mb-6">Gold It Up</h1>
+        <h1 class="text-4xl font-bold mb-6">{{ $aboutus->header1 }}</h1>
 
         <p class="text-gray-600 max-w-4xl mx-auto mb-6 text-sm sm:text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            {{ $aboutus->deskripsi1 }}
         </p>
-
-        @php
-            $images = ['gold1.jpg', 'gold2.jpg', 'gold3.jpg', 'gold1.jpg', 'gold2.jpg', 'gold3.jpg'];
-        @endphp
 
         <!-- Responsive grid: 1 kolom di mobile, 2 di tablet, 3 di desktop -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
             @foreach ($images as $image)
                 <div
                     class="w-full sm:w-80 h-64 sm:h-80 bg-white border border-gray-300 rounded-xl shadow-sm overflow-hidden">
-                    <img src="{{ asset('images/' . $image) }}" alt="Image" class="w-full h-full object-cover" />
+                    <img src="{{ asset('storage/' . $image) }}" alt="Image {{ $loop->iteration }}"
+                        class="w-full h-full object-cover" />
                 </div>
             @endforeach
         </div>
+
     </div>
 
 
     <div class="text-center py-12 px-4">
-        <h1 class="text-4xl font-bold mb-12">Who are they</h1>
+        <h1 class="text-4xl font-bold mb-12">{{ $aboutus->header2 }}</h1>
 
         <div class="max-w-6xl mx-auto space-y-16">
             <!-- Baris Pertama: 3 lingkaran -->
             <div class="flex flex-wrap justify-center gap-8">
-                @for ($i = 0; $i < 3; $i++)
+                @foreach (array_slice($points, 0, 3) as $point)
                     <div
                         class="w-48 sm:w-48 h-48 rounded-full border border-gray-300 shadow-md flex flex-col items-center justify-center text-center p-4">
-                        <h2 class="font-bold mb-2 text-base sm:text-lg">Heading</h2>
+                        <h2 class="font-bold mb-2 text-base sm:text-lg">{{ $point['header'] ?? 'Heading' }}</h2>
                         <p class="text-sm text-gray-600">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                            {{ $point['deskripsi'] ?? 'Deskripsi kosong.' }}
                         </p>
                     </div>
-                @endfor
+                @endforeach
             </div>
 
             <!-- Baris Kedua: 2 lingkaran -->
             <div class="flex flex-wrap justify-center gap-8">
-                @for ($i = 0; $i < 2; $i++)
+                @foreach (array_slice($points, 3, 2) as $point)
                     <div
                         class="w-48 sm:w-48 h-48 rounded-full border border-gray-300 shadow-md flex flex-col items-center justify-center text-center p-4">
-                        <h2 class="font-bold mb-2 text-base sm:text-lg">Heading</h2>
+                        <h2 class="font-bold mb-2 text-base sm:text-lg">{{ $point['header'] ?? 'Heading' }}</h2>
                         <p class="text-sm text-gray-600">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                            {{ $point['deskripsi'] ?? 'Deskripsi kosong.' }}
                         </p>
                     </div>
-                @endfor
+                @endforeach
             </div>
         </div>
+
     </div>
 
 
     <div class="text-center py-12 px-4">
-        <h1 class="text-4xl font-bold mb-8">Our Feature Cards</h1>
-
-        @php
-            $cards = [
-                ['image' => 'card1.jpg', 'title' => 'Title 1', 'desc' => 'Deskripsi singkat konten 1.'],
-                ['image' => 'card2.jpg', 'title' => 'Title 2', 'desc' => 'Deskripsi singkat konten 2.'],
-                ['image' => 'card3.jpg', 'title' => 'Title 3', 'desc' => 'Deskripsi singkat konten 3.'],
-                ['image' => 'card4.jpg', 'title' => 'Title 4', 'desc' => 'Deskripsi singkat konten 4.'],
-                ['image' => 'card5.jpg', 'title' => 'Title 5', 'desc' => 'Deskripsi singkat konten 5.'],
-                ['image' => 'card6.jpg', 'title' => 'Title 6', 'desc' => 'Deskripsi singkat konten 6.'],
-            ];
-        @endphp
+        <h1 class="text-4xl font-bold mb-8">{{ $aboutus->header3 }}</h1>
 
         <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-6">
             @foreach ($cards as $card)
                 <div class="w-full sm:w-80 bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
-                    <img src="{{ asset('images/' . $card['image']) }}" alt="Image"
+                    <img src="{{ asset('storage/' . $card['image']) }}" alt="Image"
                         class="w-full h-40 object-cover" />
                     <div class="p-4 text-left">
                         <h2 class="text-lg font-bold mb-1">{{ $card['title'] }}</h2>
@@ -83,5 +69,6 @@
                 </div>
             @endforeach
         </div>
+
     </div>
 </x-applayout>

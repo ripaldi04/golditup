@@ -16,7 +16,7 @@
             <div class="text-xl font-semibold text-gray-700">Server Status</div>
             <div class="text-green-600 font-bold mt-2">✔ Online</div>
         </x-filament::card>
-    </div>
+    </div>  
 
     <div class="mt-8">
         <x-filament::section>

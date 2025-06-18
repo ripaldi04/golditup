@@ -35,22 +35,23 @@
         window.addEventListener('registered-successfully', () => {
             Swal.fire({
                 title: 'Registrasi Berhasil!',
-                text: 'Akun kamu telah terdaftar dan langsung login.',
+                text: 'Akun kamu telah terdaftar',
                 icon: 'success',
                 confirmButtonText: 'OK'
             }).then(() => {
                 // Redirect setelah OK diklik
-                window.location.href = "{{ route('dashboard') }}";
+                window.location.href = "{{ route('login') }}";
             });
         });
         window.addEventListener('login-successful', (event) => {
+            const url = event.detail?.url ?? '/';
             Swal.fire({
                 title: 'Login Berhasil!',
                 text: 'Selamat datang kembali 👋',
                 icon: 'success',
                 confirmButtonText: 'Masuk'
             }).then(() => {
-                window.location.href = "{{ route('dashboard') }}";
+                window.location.href = url;
             });
         });
     </script>

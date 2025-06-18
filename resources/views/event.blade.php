@@ -1,22 +1,15 @@
 <x-applayout>
     <div wire:ignore>
-        <section class="py-16 bg-white text-center px-4">
+        <section class="py-16 bg-white text-center w-full bg-cover bg-center flex items-center justify-center"
+            style="min-height: 60vh; background-image: url('{{ asset('storage/' . $event->banner) }}')">
             <!-- Banner -->
             <div class="max-w-4xl mx-auto">
-                <h1 class="text-4xl font-bold mb-4">Banner</h1>
+                <h1 class="text-4xl font-bold mb-4">{{ $event->header }}</h1>
                 <p class="text-gray-700">
-                    <strong>Lorem ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem
-                    Ipsum
-                    has
-                    been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                    of
-                    type
-                    and scrambled it to make a type specimen book.
+                    {{ $event->deskripsi }}
                 </p>
             </div>
         </section>
-
-        <hr class="my-10">
 
         <!-- Kelas Terbaru -->
         <section class="py-12 bg-white">

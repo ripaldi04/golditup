@@ -15,10 +15,9 @@
                 <p class="text-sm text-gray-700">{{ $book->release_year }} | {{ $book->categoryContent->name }} |
                     {{ $book->author }}</p>
 
-                <h3 class="font-semibold text-lg">Heading</h3>
+                <h3 class="font-semibold text-lg">{{ $book->detail_header }}</h3>
                 <p class="text-sm text-gray-600">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies tempor nulla, nec placerat
-                    diam sagittis in. Curabitur mattis, tortor at fermentum laoreet, orci odio vulputate ligula.
+                    {{ $book->detail_deskripsi }}
                 </p>
 
                 @auth
@@ -39,11 +38,17 @@
 
         <!-- TIGA GAMBAR -->
         <div class="max-w-6xl mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="h-80 bg-gray-100 border flex items-center justify-center text-gray-500 font-semibold">Gambar
+            <div class="h-80 bg-gray-100 border flex items-center justify-center">
+                <img src="{{ asset('storage/' . $book->image_book1) }}" alt="Gambar Buku 1"
+                    class="object-cover h-full w-full" />
             </div>
-            <div class="h-80 bg-gray-100 border flex items-center justify-center text-gray-500 font-semibold">Gambar
+            <div class="h-80 bg-gray-100 border flex items-center justify-center">
+                <img src="{{ asset('storage/' . $book->image_book2) }}" alt="Gambar Buku 1"
+                    class="object-cover h-full w-full" />
             </div>
-            <div class="h-80 bg-gray-100 border flex items-center justify-center text-gray-500 font-semibold">Gambar
+            <div class="h-80 bg-gray-100 border flex items-center justify-center">
+                <img src="{{ asset('storage/' . $book->image_book3) }}" alt="Gambar Buku 1"
+                    class="object-cover h-full w-full" />
             </div>
         </div>
 
@@ -51,8 +56,7 @@
         <div class="max-w-6xl mx-auto mt-16 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
             <h3 class="text-lg md:text-xl font-bold mb-4 text-gray-800">PADUAN PEMBELIAN !</h3>
             <p class="text-sm text-gray-700 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
+                {{ $book->buying_guide }}
             </p>
         </div>
 

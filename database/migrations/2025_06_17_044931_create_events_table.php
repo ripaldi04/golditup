@@ -15,8 +15,12 @@ return new class extends Migration {
             $table->string('title');
             $table->string('image_path')->nullable();
             $table->foreignId('category_contents_id')->constrained()->onDelete('cascade');
-            $table->string('release_year');
+            $table->date('event_date');
             $table->integer('total_quota');
+            $table->string('detail_header');
+            $table->text('detail_deskripsi');
+            $table->text('buying_guide');
+            $table->string('preview_event');
             $table->timestamps();
         });
     }

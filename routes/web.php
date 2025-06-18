@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\DetailbookController;
+use App\Http\Controllers\DetaileventController;
 use App\Http\Controllers\DetailmembershipController;
 use App\Http\Controllers\EventPageController;
 use App\Http\Controllers\HomePageController;
@@ -12,8 +13,9 @@ Route::get('/', [HomePageController::class, 'index'])->name('dashboard');
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/event', [EventPageController::class, 'index'])->name('event');
 
-Route::get('/book/class/{id}', [DetailmembershipController::class, 'index'])->name('detail_membership');
+Route::get('/class/detail/{id}', [DetailmembershipController::class, 'index'])->name('detail_membership');
 Route::get('/book/detail/{id}', [DetailbookController::class, 'index'])->name('detail_book');
+Route::get('/book/event/{id}', [DetaileventController::class, 'index'])->name('detail_event');
 
 Route::get('/aboutus', [AboutusController::class, 'index'])->name('aboutus');
 

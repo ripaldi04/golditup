@@ -14,12 +14,12 @@
                     <div class="flex flex-col items-center mt-32 md:mt-48 gap-12 text-white">
                         <div class="flex flex-col gap-[10px] text-center">
                             <h1
-                                class="font-bison text-6xl md:text-9xl gradient-text-hero animate__animated animate__fadeInDownBig animate__faster">
-                                {{ $dashboard->header_banner }} </h1>
+                                class="font-bison text-black text-6xl md:text-9xl gradient-text-hero animate__animated animate__backInDown">
+                                {{ $dashboard->header_banner1 }} </h1>
                             </h1>
                             <p
-                                class="text-md md:text-xl leading-[36px] text-[#F5F8FA] max-w-4xl mx-auto animate__animated animate__fadeInDownBig animate__fast">
-                                {{ $dashboard->deskripsi_banner }} </h1>
+                                class="text-md md:text-xl leading-[36px] text-black max-w-4xl mx-auto animate__animated animate__backInDown">
+                                {{ $dashboard->deskripsi_banner1 }} </h1>
                             </p>
                         </div>
                         <div class="flex gap-6 w-fit pb-10">
@@ -37,11 +37,11 @@
                     <div class="flex flex-col items-center mt-32 md:mt-48 gap-12 text-white">
                         <div class="flex flex-col gap-[10px] text-center">
                             <h1
-                                class="font-bison text-6xl md:text-9xl gradient-text-hero animate__animated animate__fadeInDownBig animate__faster">
-                                {{ $dashboard->header_banner }} </h1>
+                                class="font-bison text-black text-6xl md:text-9xl gradient-text-hero animate__animated animate__backInDown">
+                                {{ $dashboard->header_banner2 }} </h1>
                             <p
-                                class="text-md md:text-xl leading-[36px] text-[#F5F8FA] max-w-4xl mx-auto animate__animated animate__fadeInDownBig animate__fast">
-                                {{ $dashboard->deskripsi_banner }} </h1>
+                                class="text-md md:text-xl leading-[36px] text-black max-w-4xl mx-auto animate__animated animate__backInDown">
+                                {{ $dashboard->deskripsi_banner2 }} </h1>
                             </p>
                         </div>
                         <div class="flex gap-6 w-fit pb-10">
@@ -64,7 +64,7 @@
             <div class="flex md:flex-row flex-col-reverse items-center justify-around">
                 <div class="relative mt-12 md:mt-0">
                     <div class="w-[300px] h-[200px] md:w-[500px] md:h-[300px]">
-                        <iframe class="w-full h-full rounded-xl" src="https://www.youtube.com/embed/XVxyY_owL_M"
+                        <iframe class="w-full h-full rounded-xl" src="{{ $dashboard->youtube_preview }}"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen>

@@ -52,6 +52,18 @@ class MembershipContentResource extends Resource
                 TextInput::make('total_episode')
                     ->label('Total Episode')
                     ->required(),
+                TextInput::make('preview_class')
+                    ->label('Thumbnail Video')
+                    ->required(),
+                TextInput::make('detail_header')
+                    ->label('Detail Header')
+                    ->required(),
+                TextInput::make('detail_deskripsi')
+                    ->label('Detail Deskripsi')
+                    ->required(),
+                TextInput::make('buying_guide')
+                    ->label('Panduan Pembelian')
+                    ->required(),
             ]);
     }
 
@@ -75,7 +87,19 @@ class MembershipContentResource extends Resource
                     ->searchable(),
                 TextColumn::make('total_episode')
                     ->label('Total Episode')
-                    ->searchable()
+                    ->searchable(),
+                TextColumn::make('preview_class')
+                    ->label('Thumbnail Video')
+                    ->searchable(),
+                TextColumn::make('detail_header')
+                    ->label('Detail Header')
+                    ->searchable(),
+                TextColumn::make('detail_deskripsi')
+                    ->label('Detail Deskripsi')
+                    ->searchable(),
+                TextColumn::make('buying_guide')
+                    ->label('Panduan Pembelian')
+                    ->searchable(),
             ])
             ->filters([
                 //

@@ -17,6 +17,10 @@ return new class extends Migration {
             $table->foreignId('category_contents_id')->constrained()->onDelete('cascade');
             $table->string('release_year');
             $table->string('total_episode');
+            $table->string('preview_class');
+            $table->string('detail_header');
+            $table->text('detail_deskripsi');
+            $table->text('buying_guide');
             $table->timestamps();
         });
     }

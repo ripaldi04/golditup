@@ -14,8 +14,10 @@ return new class extends Migration {
             $table->id();
             $table->string('banner1');
             $table->string('banner2');
-            $table->string('header_banner');
-            $table->string('deskripsi_banner');
+            $table->string('header_banner1');
+            $table->string('deskripsi_banner1');
+            $table->string('header_banner2');
+            $table->string('deskripsi_banner2');
             $table->string('youtube_preview');
             $table->string('header_preview');
             $table->string('deskripsi_preview');

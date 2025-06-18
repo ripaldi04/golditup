@@ -40,11 +40,17 @@ class HomePageResource extends Resource
                     ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
                     ->directory('uploads') // opsional
                     ->visibility('public'),
-                TextInput::make('header_banner')
-                    ->label('Header Banner')
+                TextInput::make('header_banner1')
+                    ->label('Header Banner1')
                     ->required(),
-                TextInput::make('deskripsi_banner')
+                TextInput::make('deskripsi_banner1')
                     ->label('Deskripsi Banner')
+                    ->required(),
+                TextInput::make('header_banner2')
+                    ->label('Header Banner2')
+                    ->required(),
+                TextInput::make('deskripsi_banner2')
+                    ->label('Deskripsi Banner2')
                     ->required(),
                 TextInput::make('youtube_preview')
                     ->label('Youtube Preview')
@@ -116,9 +122,13 @@ class HomePageResource extends Resource
                 ImageColumn::make('banner2')
                     ->label('Banner 2')
                     ->disk('public'),
-                TextColumn::make('header_banner')
-                    ->label('Header Banner'),
-                TextColumn::make('deskripsi_banner')
+                TextColumn::make('header_banner1')
+                    ->label('Header Banner1'),
+                TextColumn::make('deskripsi_banner1')
+                    ->label('Deskripsi Banner'),
+                TextColumn::make('header_banner2')
+                    ->label('Header Banner1'),
+                TextColumn::make('deskripsi_banner2')
                     ->label('Deskripsi Banner'),
                 TextColumn::make('youtube_preview')
                     ->label('Youtube Preview'),

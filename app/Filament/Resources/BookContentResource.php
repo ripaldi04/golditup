@@ -52,6 +52,30 @@ class BookContentResource extends Resource
                 TextInput::make('author')
                     ->label('Penulis')
                     ->required(),
+                TextInput::make('detail_header')
+                    ->label('Detail Header')
+                    ->required(),
+                TextInput::make('detail_deskripsi')
+                    ->label('Detail Deskripsi')
+                    ->required(),
+                FileUpload::make('image_book1')
+                    ->label('Gambar Buku1')
+                    ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
+                    ->directory('uploads') // opsional
+                    ->visibility('public'),
+                FileUpload::make('image_book2')
+                    ->label('Gambar Buku2')
+                    ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
+                    ->directory('uploads') // opsional
+                    ->visibility('public'),
+                FileUpload::make('image_book3')
+                    ->label('Gambar Buku3')
+                    ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
+                    ->directory('uploads') // opsional
+                    ->visibility('public'),
+                TextInput::make('buying_guide')
+                    ->label('Panduan Pembelian')
+                    ->required(),
             ]);
     }
 
@@ -75,7 +99,28 @@ class BookContentResource extends Resource
                     ->searchable(),
                 TextColumn::make('author')
                     ->label('Penulis')
-                    ->searchable()
+                    ->searchable(),
+                TextColumn::make('detail_header')
+                    ->label('Detail Header')
+                    ->searchable(),
+                TextColumn::make('detail_deskripsi')
+                    ->label('Detail Deskripsi')
+                    ->searchable(),
+                ImageColumn::make('book_image1')
+                    ->label('Gambar Buku1')
+                    ->disk('public')
+                    ->visibility('public'),
+                ImageColumn::make('book_image2')
+                    ->label('Gambar Buku2')
+                    ->disk('public')
+                    ->visibility('public'),
+                ImageColumn::make('book_image3')
+                    ->label('Gambar Buku3')
+                    ->disk('public')
+                    ->visibility('public'),
+                TextColumn::make('buying_guide')
+                    ->label('Panduan Pembelian')
+                    ->searchable(),
             ])
             ->filters([
                 //

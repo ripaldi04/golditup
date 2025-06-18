@@ -6,7 +6,9 @@ use App\Filament\Resources\EventContentResource\Pages;
 use App\Filament\Resources\EventContentResource\RelationManagers;
 use App\Models\CategoryContent;
 use App\Models\EventContent;
+use Date;
 use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -48,11 +50,23 @@ class EventContentResource extends Resource
                     ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
                     ->directory('uploads') // opsional
                     ->visibility('public'),
-                TextInput::make('release_year')
-                    ->label('Tahun Rilis')
+                DatePicker::make('event_date')
+                    ->label('Tanggal Acara')
                     ->required(),
                 TextInput::make('total_quota')
                     ->label('Total Kuota')
+                    ->required(),
+                TextInput::make('preview_event')
+                    ->label('Thumbnail Video')
+                    ->required(),
+                TextInput::make('detail_header')
+                    ->label('Detail Header')
+                    ->required(),
+                TextInput::make('detail_deskripsi')
+                    ->label('Detail Deskripsi')
+                    ->required(),
+                TextInput::make('buying_guide')
+                    ->label('Panduan Pembelian')
                     ->required(),
             ]);
     }
@@ -72,12 +86,26 @@ class EventContentResource extends Resource
                     ->label('Gambar Konten')
                     ->disk('public')
                     ->visibility('public'),
-                TextColumn::make('release_year')
-                    ->label('Tahun Rilis')
+                TextColumn::make('event_date')
+                    ->label('Tanggal Acara')
+                    ->date('d M Y') // atau 'd F Y' untuk full bulan
+                    ->sortable()
                     ->searchable(),
                 TextColumn::make('total_quota')
                     ->label('Total Quota')
-                    ->searchable()
+                    ->searchable(),
+                TextColumn::make('detail_header')
+                    ->label('Detail Header')
+                    ->searchable(),
+                TextColumn::make('detail_deskripsi')
+                    ->label('Detail Deskripsi')
+                    ->searchable(),
+                TextColumn::make('buying_guide')
+                    ->label('Panduan Pembelian')
+                    ->searchable(),
+                TextColumn::make('preview_event')
+                    ->label('Thumbnail Video')
+                    ->searchable(),
             ])
             ->filters([
                 //

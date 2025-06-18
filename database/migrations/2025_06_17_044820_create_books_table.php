@@ -17,6 +17,12 @@ return new class extends Migration {
             $table->foreignId('category_contents_id')->constrained()->onDelete('cascade');
             $table->string('release_year');
             $table->string('author');
+            $table->string('detail_header');
+            $table->text('detail_deskripsi');
+            $table->string('image_book1');
+            $table->string('image_book2');
+            $table->string('image_book3');
+            $table->text('buying_guide');
             $table->timestamps();
         });
     }

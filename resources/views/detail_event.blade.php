@@ -3,34 +3,34 @@
         <!-- YOUTUBE VIDEO -->
         <div class="max-w-5xl mx-auto">
             <div class="aspect-video border border-gray-300">
-                <iframe class="w-full h-full" src="{{ $membership->preview_class }}" title="YouTube video player"
-                    frameborder="0"
+                <iframe class="w-full h-full" src="{{ $event->preview_event }}" title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
             </div>
         </div>
-
         <!-- CONTENT BLOCK -->
         <div class="max-w-6xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <!-- GAMBAR -->
             <div class="w-full h-64 md:h-80 bg-gray-100 flex items-center justify-center border">
-                <img src="{{ asset('storage/' . $membership->image_path) }}" alt="{{ $membership->title }}"
+                <img src="{{ asset('storage/' . $event->image_path) }}" alt="{{ $event->title }}"
                     class="object-cover w-full h-full" />
             </div>
 
             <!-- TEXT KONTEN -->
             <div class="space-y-4">
                 <p class="text-xs uppercase text-gray-500 font-medium">MATERI BY GOLD IT UP</p>
-                <h2 class="text-2xl font-bold">{{ $membership->title }}</h2>
+                <h2 class="text-2xl font-bold">{{ $event->title }}</h2>
 
-                <p class="text-sm text-gray-700">{{ $membership->release_year }} |
-                    {{ $membership->categoryContent->name }} | {{ $membership->total_episode }} Episode</p>
+                <p class="text-sm text-gray-700">
+                    {{ \Carbon\Carbon::parse($event->event_date)->translatedFormat('d F Y') }}
+                    |
+                    {{ $event->categoryContent->name }} | Sisa Bangku {{ $event->total_quota }}</p>
 
-                <h3 class="font-semibold text-lg">{{ $membership->detail_header }}</h3>
+                <h3 class="font-semibold text-lg">{{ $event->detail_header }}</h3>
 
                 <p class="text-sm text-gray-600">
-                    {{ $membership->detail_deskripsi }}
+                    {{ $event->detail_deskripsi }}
                 </p>
                 <button @click="showAlert = true"
                     class="mt-4 px-4 py-2 bg-[#FEBA17] text-white border border-[#FEBA17] rounded hover:bg-[#e6a600] transition">
@@ -67,7 +67,7 @@
         <div class="max-w-6xl mx-auto mt-16 bg-white border border-gray-200 rounded-lg shadow-sm p-6">
             <h3 class="text-xl font-bold mb-4 text-gray-800">PADUAN PEMBELIAN!</h3>
             <p class="text-sm text-gray-700 leading-relaxed">
-                {{ $membership->buying_guide}}</p>
+                {{ $event->buying_guide }}</p>
         </div>
     </section>
 </x-app-layout>

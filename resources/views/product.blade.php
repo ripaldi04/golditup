@@ -20,7 +20,7 @@
                                 <div class="mt-4 text-center">
                                     <h3 class="font-semibold text-lg">{{ $membership->title }}</h3>
                                     <p class="text-gray-500 text-sm">{{ $membership->categoryContent->name ?? '-' }}</p>
-                                    <a href="{{ route('product', $membership->id) }}"
+                                    <a href="{{ route('detail_membership', $membership->id) }}"
                                         class="mt-2 inline-block bg-[#FEBA17] text-white text-sm px-4 py-2 rounded-md hover:opacity-90 transition">
                                         Lihat Selengkapnya
                                     </a>
@@ -53,7 +53,7 @@
                             <div class="mt-4 text-center">
                                 <h3 class="font-semibold text-lg">{{ $book->title }}</h3>
                                 <p class="text-gray-500 text-sm">{{ $book->categoryContent->name ?? '-' }}</p>
-                                <a href="{{ route('product', $book->id) }}"
+                                <a href="{{ route('detail_book', $book->id) }}"
                                     class="mt-2 inline-block bg-[#FEBA17] text-white text-sm px-4 py-2 rounded-md hover:opacity-90 transition">
                                     Lihat Selengkapnya
                                 </a>

@@ -4,14 +4,16 @@
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <!-- GAMBAR BUKU -->
             <div class="w-full h-80 md:h-[450px] bg-gray-100 border flex items-center justify-center">
-                <span class="text-xl text-gray-500 font-semibold">GAMBAR BUKU</span>
+                <img src="{{ asset('storage/' . $book->image_path) }}" alt="{{ $book->title }}"
+                    class="object-cover w-full h-full" />
             </div>
 
             <!-- KONTEN TEKS -->
             <div class="space-y-4">
                 <p class="text-xs uppercase text-gray-500 font-medium">MATERI BY GOLD IT UP</p>
-                <h2 class="text-2xl font-bold">JUDUL</h2>
-                <p class="text-sm text-gray-700">Tahun Rilis | Genre | Rating Umur</p>
+                <h2 class="text-2xl font-bold">{{ $book->title }}</h2>
+                <p class="text-sm text-gray-700">{{ $book->release_year }} | {{ $book->categoryContent->name }} |
+                    {{ $book->author }}</p>
 
                 <h3 class="font-semibold text-lg">Heading</h3>
                 <p class="text-sm text-gray-600">

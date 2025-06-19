@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\BookContentResource\Pages;
-use App\Filament\Resources\BookContentResource\RelationManagers;
 use App\Models\BookContent;
 use App\Models\CategoryContent;
 use Filament\Forms;
@@ -28,7 +27,10 @@ class BookContentResource extends Resource
     protected static ?string $navigationGroup = 'Konten';
     protected static ?string $slug = 'book';
     public static ?string $label = 'Buku';
-
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->withTrashed();
+    }
     public static function form(Form $form): Form
     {
         return $form
@@ -123,15 +125,19 @@ class BookContentResource extends Resource
                     ->searchable(),
             ])
             ->filters([
-                //
+                Tables\Filters\TrashedFilter::make(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+                Tables\Actions\RestoreAction::make(),
+                Tables\Actions\ForceDeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\ForceDeleteBulkAction::make(),
+                    Tables\Actions\RestoreBulkAction::make(),
                 ]),
             ]);
     }

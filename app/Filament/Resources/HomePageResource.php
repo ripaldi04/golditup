@@ -34,12 +34,16 @@ class HomePageResource extends Resource
                     ->label('Banner 1')
                     ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
                     ->directory('uploads') // opsional
-                    ->visibility('public'),
+                    ->visibility('public')
+                    ->image()
+                    ->previewable(), //
                 FileUpload::make('banner2')
                     ->label('Banner 2')
                     ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
                     ->directory('uploads') // opsional
-                    ->visibility('public'),
+                    ->visibility('public')
+                    ->image()
+                    ->previewable(), //
                 TextInput::make('header_banner1')
                     ->label('Header Banner1')
                     ->required(),
@@ -117,11 +121,9 @@ class HomePageResource extends Resource
         return $table
             ->columns([
                 ImageColumn::make('banner1')
-                    ->label('Banner 1')
-                    ->disk('public'),
+                    ->label('Banner 1'),
                 ImageColumn::make('banner2')
-                    ->label('Banner 2')
-                    ->disk('public'),
+                    ->label('Banner 2'),
                 TextColumn::make('header_banner1')
                     ->label('Header Banner1'),
                 TextColumn::make('deskripsi_banner1')

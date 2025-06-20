@@ -243,24 +243,48 @@ class AboutusPageResource extends Resource
 
                 TextColumn::make('header2')->label('Header2'),
 
-                ImageColumn::make('background_point1')->label('Background Point1'),
+                ImageColumn::make('background_point1')
+                    ->label('background_point1')
+                    ->state(fn($record) => asset('storage/' . $record->background_point1)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->background_point1))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('header_point1')->label('Header Point1'),
                 TextColumn::make('deskripsi_point1')->label('Deskripsi Point1'),
 
-                ImageColumn::make('background_point2')->label('Background Point2'),
+                ImageColumn::make('background_point2')
+                    ->label('background_point2')
+                    ->state(fn($record) => asset('storage/' . $record->background_point2)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->background_point2))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('header_point2')->label('Header Point2'),
                 TextColumn::make('deskripsi_point2')->label('Deskripsi Point2'),
 
-                ImageColumn::make('background_point3')->label('Background Point3'),
+                ImageColumn::make('background_point3')
+                    ->label('background_point3')
+                    ->state(fn($record) => asset('storage/' . $record->background_point3)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->background_point3))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('header_point3')->label('Header Point3'),
                 TextColumn::make('deskripsi_point3')->label('Deskripsi Point3'),
 
-                ImageColumn::make('background_point4')->label('Background Point4'),
+                ImageColumn::make('background_point4')
+                    ->label('background_point4')
+                    ->state(fn($record) => asset('storage/' . $record->background_point4)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->background_point4))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('header_point4')->label('Header Point4'),
                 TextColumn::make('deskripsi_point4')->label('Deskripsi Point4'),
 
-                ImageColumn::make('background_point5')->label('Background Point5'),
-                TextColumn::make('header_point5')->label('Header Point5'),
+                ImageColumn::make('background_point5')
+                    ->label('background_point5')
+                    ->state(fn($record) => asset('storage/' . $record->background_point5)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->background_point5))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),                TextColumn::make('header_point5')->label('Header Point5'),
                 TextColumn::make('deskripsi_point5')->label('Deskripsi Point5'),
 
                 TextColumn::make('header3')->label('Header3'),
@@ -325,7 +349,7 @@ class AboutusPageResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                // Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

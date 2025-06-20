@@ -88,8 +88,10 @@ class EventContentResource extends Resource
                     ->searchable(),
                 ImageColumn::make('image_path')
                     ->label('Gambar Konten')
-                    ->disk('public')
-                    ->visibility('public'),
+                    ->state(fn($record) => asset('storage/' . $record->image_path)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->image_path))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('event_date')
                     ->label('Tanggal Acara')
                     ->date('d M Y') // atau 'd F Y' untuk full bulan

@@ -121,9 +121,17 @@ class HomePageResource extends Resource
         return $table
             ->columns([
                 ImageColumn::make('banner1')
-                    ->label('Banner 1'),
+                    ->label('Banner 1')
+                    ->state(fn($record) => asset('storage/' . $record->banner1)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->banner1))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 ImageColumn::make('banner2')
-                    ->label('Banner 2'),
+                    ->label('Banner 2')
+                    ->state(fn($record) => asset('storage/' . $record->banner2)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->banner2))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('header_banner1')
                     ->label('Header Banner1'),
                 TextColumn::make('deskripsi_banner1')

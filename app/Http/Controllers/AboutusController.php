@@ -27,6 +27,7 @@ class AboutusController extends Controller
         if ($aboutus) {
             for ($i = 1; $i <= 5; $i++) {
                 $points[] = [
+                    'background' => $aboutus->{'background_point' . $i},
                     'header' => $aboutus->{'header_point' . $i},
                     'deskripsi' => $aboutus->{'deskripsi_point' . $i},
                 ];
@@ -45,6 +46,6 @@ class AboutusController extends Controller
             }
         }
 
-        return view('aboutus', compact('aboutus', 'images', 'points','cards'));
+        return view('aboutus', compact('aboutus', 'images', 'points', 'cards'));
     }
 }

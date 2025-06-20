@@ -84,8 +84,10 @@ class MembershipContentResource extends Resource
                     ->searchable(),
                 ImageColumn::make('image_path')
                     ->label('Gambar Konten')
-                    ->disk('public')
-                    ->visibility('public'),
+                    ->state(fn($record) => asset('storage/' . $record->image_path)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->image_path))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('release_year')
                     ->label('Tahun Rilis')
                     ->searchable(),

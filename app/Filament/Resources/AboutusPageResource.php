@@ -39,7 +39,10 @@ class AboutusPageResource extends Resource
                     ->label('Gambar Konten1')
                     ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
                     ->directory('uploads') // opsional
-                    ->visibility('public'),
+                    ->visibility('public')
+                    ->image()
+                    ->imagePreviewHeight('150px')
+                    ->previewable(),
                 FileUpload::make('image2')
                     ->label('Gambar Konten2')
                     ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
@@ -68,30 +71,55 @@ class AboutusPageResource extends Resource
                 TextInput::make('header2')
                     ->label('Header2')
                     ->required(),
+                FileUpload::make('background_point1')
+                    ->label('background point1')
+                    ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
+                    ->directory('uploads') // opsional
+                    ->visibility('public'),
                 TextInput::make('header_point1')
                     ->label('Header Point1')
                     ->required(),
                 TextInput::make('deskripsi_point1')
                     ->label('Deskripsi Point1')
                     ->required(),
+                FileUpload::make('background_point2')
+                    ->label('background point2')
+                    ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
+                    ->directory('uploads') // opsional
+                    ->visibility('public'),
                 TextInput::make('header_point2')
                     ->label('Header Point2')
                     ->required(),
                 TextInput::make('deskripsi_point2')
                     ->label('Deskripsi Point2')
                     ->required(),
+                FileUpload::make('background_point3')
+                    ->label('background point3')
+                    ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
+                    ->directory('uploads') // opsional
+                    ->visibility('public'),
                 TextInput::make('header_point3')
                     ->label('Header Point3')
                     ->required(),
                 TextInput::make('deskripsi_point3')
                     ->label('Deskripsi Point3')
                     ->required(),
+                FileUpload::make('background_point4')
+                    ->label('background point4')
+                    ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
+                    ->directory('uploads') // opsional
+                    ->visibility('public'),
                 TextInput::make('header_point4')
                     ->label('Header Point4')
                     ->required(),
                 TextInput::make('deskripsi_point4')
                     ->label('Deskripsi Point4')
                     ->required(),
+                FileUpload::make('background_point5')
+                    ->label('background point5')
+                    ->disk('public') // Tambahkan jika ingin simpan di storage/app/public
+                    ->directory('uploads') // opsional
+                    ->visibility('public'),
                 TextInput::make('header_point5')
                     ->label('Header Point5')
                     ->required(),
@@ -176,57 +204,118 @@ class AboutusPageResource extends Resource
             ->columns([
                 TextColumn::make('header1')->label('Header 1'),
                 TextColumn::make('deskripsi1')->label('Deskripsi 1'),
-
-                ImageColumn::make('image1')->label('Gambar Konten1')->disk('public'),
-                ImageColumn::make('image2')->label('Gambar Konten2')->disk('public'),
-                ImageColumn::make('image3')->label('Gambar Konten3')->disk('public'),
-                ImageColumn::make('image4')->label('Gambar Konten4')->disk('public'),
-                ImageColumn::make('image5')->label('Gambar Konten5')->disk('public'),
-                ImageColumn::make('image6')->label('Gambar Konten6')->disk('public'),
+                ImageColumn::make('image1')
+                    ->label('Gambar Konten1')
+                    ->state(fn($record) => asset('storage/' . $record->image1)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->image1))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
+                ImageColumn::make('image2')
+                    ->label('Gambar Konten2')
+                    ->state(fn($record) => asset('storage/' . $record->image2)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->image2))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
+                ImageColumn::make('image3')
+                    ->label('Gambar Konten3')
+                    ->state(fn($record) => asset('storage/' . $record->image3)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->image3))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
+                ImageColumn::make('image4')
+                    ->label('Gambar Konten4')
+                    ->state(fn($record) => asset('storage/' . $record->image4)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->image4))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
+                ImageColumn::make('image5')
+                    ->label('Gambar Konten5')
+                    ->state(fn($record) => asset('storage/' . $record->image5)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->image5))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
+                ImageColumn::make('image6')
+                    ->label('Gambar Konten6')
+                    ->state(fn($record) => asset('storage/' . $record->image6)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->image6))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
 
                 TextColumn::make('header2')->label('Header2'),
 
+                ImageColumn::make('background_point1')->label('Background Point1'),
                 TextColumn::make('header_point1')->label('Header Point1'),
                 TextColumn::make('deskripsi_point1')->label('Deskripsi Point1'),
 
+                ImageColumn::make('background_point2')->label('Background Point2'),
                 TextColumn::make('header_point2')->label('Header Point2'),
                 TextColumn::make('deskripsi_point2')->label('Deskripsi Point2'),
 
+                ImageColumn::make('background_point3')->label('Background Point3'),
                 TextColumn::make('header_point3')->label('Header Point3'),
                 TextColumn::make('deskripsi_point3')->label('Deskripsi Point3'),
 
+                ImageColumn::make('background_point4')->label('Background Point4'),
                 TextColumn::make('header_point4')->label('Header Point4'),
                 TextColumn::make('deskripsi_point4')->label('Deskripsi Point4'),
 
+                ImageColumn::make('background_point5')->label('Background Point5'),
                 TextColumn::make('header_point5')->label('Header Point5'),
                 TextColumn::make('deskripsi_point5')->label('Deskripsi Point5'),
 
-                TextColumn::make('header_point6')->label('Header Point6'),
-                TextColumn::make('deskripsi_point6')->label('Deskripsi Point6'),
-
                 TextColumn::make('header3')->label('Header3'),
 
-                TextColumn::make('card1')->label('Card1'),
+                ImageColumn::make('card1')
+                    ->label('Card1')
+                    ->state(fn($record) => asset('storage/' . $record->card1)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->card1))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('title1')->label('Title1'),
                 TextColumn::make('deskripsi_card1')->label('Deskripsi Card1'),
 
-                TextColumn::make('card2')->label('Card2'),
+                ImageColumn::make('card2')
+                    ->label('Card2')
+                    ->state(fn($record) => asset('storage/' . $record->card2)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->card2))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('title2')->label('Title2'),
                 TextColumn::make('deskripsi_card2')->label('Deskripsi Card2'),
 
-                TextColumn::make('card3')->label('Card3'),
+                ImageColumn::make('card3')
+                    ->label('Card3')
+                    ->state(fn($record) => asset('storage/' . $record->card3)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->card3))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('title3')->label('Title3'),
                 TextColumn::make('deskripsi_card3')->label('Deskripsi Card3'),
 
-                TextColumn::make('card4')->label('Card4'),
+                ImageColumn::make('card4')
+                    ->label('Card4')
+                    ->state(fn($record) => asset('storage/' . $record->card4)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->card4))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('title4')->label('Title4'),
                 TextColumn::make('deskripsi_card4')->label('Deskripsi Card4'),
 
-                TextColumn::make('card5')->label('Card5'),
+                ImageColumn::make('card5')
+                    ->label('Card5')
+                    ->state(fn($record) => asset('storage/' . $record->card5)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->card5))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('title5')->label('Title5'),
                 TextColumn::make('deskripsi_card5')->label('Deskripsi Card5'),
 
-                TextColumn::make('card6')->label('Card6'),
+                ImageColumn::make('card6')
+                    ->label('Card6')
+                    ->state(fn($record) => asset('storage/' . $record->card5)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->card5))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('title6')->label('Title6'),
                 TextColumn::make('deskripsi_card6')->label('Deskripsi Card6'),
             ])
@@ -236,6 +325,7 @@ class AboutusPageResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

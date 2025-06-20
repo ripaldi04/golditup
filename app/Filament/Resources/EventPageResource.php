@@ -47,7 +47,10 @@ class EventPageResource extends Resource
             ->columns([
                 ImageColumn::make('banner')
                     ->label('Banner')
-                    ->disk('public'),
+                    ->state(fn($record) => asset('storage/' . $record->banner)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->banner))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('header')
                     ->label('Header'),
                 TextColumn::make('deskripsi')

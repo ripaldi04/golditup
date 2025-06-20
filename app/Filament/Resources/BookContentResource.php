@@ -94,8 +94,10 @@ class BookContentResource extends Resource
                     ->searchable(),
                 ImageColumn::make('image_path')
                     ->label('Gambar Konten')
-                    ->disk('public')
-                    ->visibility('public'),
+                    ->state(fn($record) => asset('storage/' . $record->image_path)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->image_path))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('release_year')
                     ->label('Tahun Rilis')
                     ->searchable(),
@@ -110,16 +112,22 @@ class BookContentResource extends Resource
                     ->searchable(),
                 ImageColumn::make('book_image1')
                     ->label('Gambar Buku1')
-                    ->disk('public')
-                    ->visibility('public'),
+                    ->state(fn($record) => asset('storage/' . $record->book_image1)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->book_image1))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 ImageColumn::make('book_image2')
                     ->label('Gambar Buku2')
-                    ->disk('public')
-                    ->visibility('public'),
+                    ->state(fn($record) => asset('storage/' . $record->book_image2)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->book_image2))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 ImageColumn::make('book_image3')
                     ->label('Gambar Buku3')
-                    ->disk('public')
-                    ->visibility('public'),
+                    ->state(fn($record) => asset('storage/' . $record->book_image3)) // <- Ini untuk gambar thumbnail muncul
+                    ->url(fn($record) => asset('storage/' . $record->book_image3))   // <- Ini untuk link jika diklik
+                    ->openUrlInNewTab() // opsional
+                    ->square(),
                 TextColumn::make('buying_guide')
                     ->label('Panduan Pembelian')
                     ->searchable(),

@@ -27,8 +27,8 @@
             <!-- Baris Pertama: 3 lingkaran -->
             <div class="flex flex-wrap justify-center gap-8">
                 @foreach (array_slice($points, 0, 3) as $point)
-                    <div
-                        class="w-48 sm:w-48 h-48 rounded-full border border-gray-300 shadow-md flex flex-col items-center justify-center text-center p-4">
+                    <div class="w-48 sm:w-48 h-48 rounded-full border border-gray-300 shadow-md flex flex-col items-center justify-center text-center p-4"
+                        style="background-image: url('{{ asset('storage/' . ($point['background'] ?? 'default.jpg')) }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                         <h2 class="font-bold mb-2 text-base sm:text-lg">{{ $point['header'] ?? 'Heading' }}</h2>
                         <p class="text-sm text-gray-600">
                             {{ $point['deskripsi'] ?? 'Deskripsi kosong.' }}
@@ -40,9 +40,11 @@
             <!-- Baris Kedua: 2 lingkaran -->
             <div class="flex flex-wrap justify-center gap-8">
                 @foreach (array_slice($points, 3, 2) as $point)
-                    <div
-                        class="w-48 sm:w-48 h-48 rounded-full border border-gray-300 shadow-md flex flex-col items-center justify-center text-center p-4">
-                        <h2 class="font-bold mb-2 text-base sm:text-lg">{{ $point['header'] ?? 'Heading' }}</h2>
+                    <div class="w-48 sm:w-48 h-48 rounded-full border border-gray-300 shadow-md flex flex-col items-center justify-center text-center p-4"
+                        style="background-image: url('{{ asset('storage/' . ($point['background'] ?? 'default.jpg')) }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                        <h2 class="font-bold
+                        mb-2 text-base sm:text-lg">
+                            {{ $point['header'] ?? 'Heading' }}</h2>
                         <p class="text-sm text-gray-600">
                             {{ $point['deskripsi'] ?? 'Deskripsi kosong.' }}
                         </p>

@@ -18,6 +18,15 @@ new #[Layout('layouts.guest')] class extends Component {
     /**
      * Handle an incoming registration request.
      */
+    // RegisterController.php
+    public function store(Request $request)
+    {
+        // Validasi dan logika register...
+
+        // Setelah berhasil
+        return redirect()->route('login')->with('success', 'Registrasi berhasil! Silakan login.');
+    }
+
     public function register(): void
     {
         $validated = $this->validate([
@@ -95,4 +104,18 @@ new #[Layout('layouts.guest')] class extends Component {
             </x-primary-button>
         </div>
     </form>
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil!',
+                    text: '{{ session('success') }}',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
+                });
+            });
+        </script>
+    @endif
+
 </div>

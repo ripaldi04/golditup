@@ -22,6 +22,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->app->singleton(LogoutResponse::class, CustomLogoutResponse::class);
+        // $this->app->singleton(LogoutResponse::class, CustomLogoutResponse::class);
     }
 }

@@ -19,9 +19,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
         Session::regenerate();
 
-        $this->dispatch('login-successful', [
-            'url' => auth()->user()?->is_admin ? '/admin/dashboard' : '/',
-        ]);
+        redirect(auth()->user()?->is_admin ? '/admin/dashboard' : '/');
     }
 }; ?>
 
@@ -82,3 +80,22 @@ new #[Layout('layouts.guest')] class extends Component {
         </div>
     </form>
 </div>
+<script>
+    Livewire.on('login-successful', ({
+        url
+    }) => {
+        Swal.fire({
+            toast: true,
+            position: 'top-end',
+            icon: 'success',
+            title: 'Berhasil login!',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+        });
+
+        setTimeout(() => {
+            window.location.href = url;
+        }, 2000);
+    });
+</script>
